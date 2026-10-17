@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday 🎂</title>
+<meta name="theme-color" content="#ffb8d4">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="og:title" content="Happy Birthday 🎂">
+<meta property="og:description" content="HBD 🎂">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎂%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#ffd1e3; --bg2:#ffb8d4; --ink:#7a2a4d; --card:#ffffff; --caption:#c2457c;
+  --bubble:#fff5f9; --shadow:rgba(150,40,90,.25); box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg1:#4a1830; --bg2:#6b2447; --ink:#ffd9e8; --card:#fff8fb; --caption:#c2457c;
+    --bubble:#5a1f3c; --shadow:rgba(0,0,0,.45); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg1:#4a1830; --bg2:#6b2447; --ink:#ffd9e8; --card:#fff8fb; --caption:#c2457c;
+  --bubble:#5a1f3c; --shadow:rgba(0,0,0,.45); color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+main>*+*{margin-top:28px}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%}
+body{
+  font-family:'Mali','Sarabun','Noto Sans Thai','Thonburi','Tahoma',system-ui,sans-serif; color:var(--ink);
+  background:radial-gradient(circle at 20% 15%,var(--bg1),var(--bg2)); background-color:var(--bg2);
+  min-height:100vh; min-height:100dvh; overflow-x:hidden; position:relative;
+}
+.dots{position:fixed;top:0;left:0;right:0;bottom:0;background-image:radial-gradient(rgba(255,255,255,.35) 2px,transparent 2.5px);background-size:34px 34px;pointer-events:none}
+#float{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;overflow:hidden;z-index:0}
+.mascot{position:absolute;width:calc(var(--s) * var(--k,1));height:calc(var(--s) * var(--k,1));animation:drift var(--d) ease-in-out var(--delay) infinite alternate;filter:drop-shadow(0 6px 6px var(--shadow))}
+.mascot img,.mascot svg{width:100%;height:100%;display:block}
+@keyframes drift{
+  0%{transform:translate(0,0) rotate(-8deg)}
+  50%{transform:translate(var(--x),calc(var(--y) * -1)) rotate(8deg)}
+  100%{transform:translate(calc(var(--x) * -1),var(--y)) rotate(-6deg)}
+}
+main{position:relative;z-index:1;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 20px 48px}
+h1{margin:0;font-size:clamp(28px,6vw,44px);text-align:center;text-shadow:0 3px 0 rgba(255,255,255,.6)}
+.polaroid{
+  position:relative;background:var(--card);padding:16px 16px 64px;width:300px;width:clamp(250px,78vw,340px);
+  border-radius:6px;box-shadow:0 14px 30px var(--shadow),0 2px 4px var(--shadow);
+  transform:rotate(-3deg);transition:transform .3s;cursor:pointer;
+}
+@media (hover:hover){.polaroid:hover{transform:rotate(0) scale(1.03)}}
+.polaroid{touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.tape{position:absolute;top:-14px;left:50%;width:100px;height:28px;transform:translateX(-50%) rotate(3deg);background:rgba(255,236,160,.8);box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.photo{aspect-ratio:1/1;width:100%;background:#f4dbe6;border-radius:2px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;color:#b0507a;font-size:15px;box-shadow:inset 0 0 14px rgba(0,0,0,.12)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.caption{position:absolute;left:0;right:0;bottom:16px;text-align:center;font-weight:700;font-size:22px;color:var(--caption)}
+.wish{
+  max-width:460px;background:var(--bubble);border-radius:28px;padding:22px 26px;text-align:center;line-height:1.7;
+  font-size:clamp(16px,4vw,19px);box-shadow:0 8px 20px var(--shadow);border:3px dashed #ff8fba;
+}
+.wish b{display:block;font-size:1.2em;margin-bottom:6px}
+.hint{font-size:13px;opacity:.75}
+/* iPad / แท็บเล็ต */
+@media (min-width:768px){
+  :root{--k:1.35}
+  main{padding:56px 32px 64px} main>*+*{margin-top:40px}
+  h1{font-size:54px}
+  .polaroid{width:440px;padding:20px 20px 80px}
+  .caption{font-size:30px;bottom:22px}
+  .wish{max-width:600px;font-size:22px;padding:28px 34px}
+}
+/* จอใหญ่ / iPad แนวนอน */
+@media (min-width:1100px){
+  :root{--k:1.6}
+  .polaroid{width:480px}
+}
+/* มือถือจอเล็ก */
+@media (max-width:480px){ :root{--k:.85} main{padding:28px 16px 40px} main>*+*{margin-top:22px} }
+/* มือถือแนวนอน */
+@media (max-height:500px) and (orientation:landscape){ main{padding:20px} .polaroid{width:220px} }
+@media (prefers-reduced-motion:reduce){ .mascot{animation-duration:30s} }
+</style>
+</head>
+<body>
+<div class="dots"></div>
+<div id="float" aria-hidden="true"></div>
+
+<main>
+  <h1>🎂 Happy Birthday! 🎉</h1>
+
+  <div class="polaroid" id="frame" title="คลิกเพื่อเปลี่ยนรูป">
+    <div class="tape"></div>
+    <div class="photo" id="photo">📷 คลิกเพื่อใส่รูป<br>เจ้าของวันเกิด</div>
+    <div class="caption" id="name">คุณหนูพรีม</div>
+  </div>
+  <input type="file" id="file" accept="image/*" hidden>
+
+  <div class="wish">
+    <b>HBD🎂</b>
+    มีความสุขมากค่ะ
+  </div>
+</main>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="blob" viewBox="0 0 100 100">
+      <ellipse cx="30" cy="26" rx="10" ry="14" fill="var(--c)"/>
+      <ellipse cx="70" cy="26" rx="10" ry="14" fill="var(--c)"/>
+      <ellipse cx="50" cy="60" rx="38" ry="34" fill="var(--c)" stroke="#8a5a6e" stroke-width="2.5"/>
+      <circle cx="37" cy="58" r="3.4" fill="#4a2a38"/>
+      <circle cx="63" cy="58" r="3.4" fill="#4a2a38"/>
+      <ellipse cx="29" cy="68" rx="6" ry="4" fill="#ff9fc0" opacity=".8"/>
+      <ellipse cx="71" cy="68" rx="6" ry="4" fill="#ff9fc0" opacity=".8"/>
+      <path d="M45 66 Q50 72 55 66" stroke="#4a2a38" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<script>
+// ===== แก้ตรงนี้ได้ =====
+const PERSON_NAME = "คุณหนูพรีม";
+// ถ้ามีรูปตัวละครของตัวเอง (PNG พื้นหลังโปร่งใส เป็น data: URI) ใส่ใน array นี้ได้
+const CUSTOM_CHARACTER_IMAGES = ["images/chiikawa1.png", "images/chiikawa2.png", "images/chiikawa3.png", "images/chiikawa4.png"];
+// ========================
+// ใส่ path รูปเจ้าของวันเกิดตรงนี้ เช่น "images/photo.jpg" (วางไฟล์ไว้ในโฟลเดอร์ images)
+const PHOTO_SRC = "images/photo.jpg";
+document.getElementById('name').textContent = PERSON_NAME;
+if (PHOTO_SRC) document.getElementById('photo').innerHTML = `<img alt="รูปเจ้าของวันเกิด" src="${PHOTO_SRC}">`;
+
+const layer = document.getElementById('float');
+const palette = ['#ffffff','#fff6d6','#e3f1ff','#ffe9f2'];
+let lastW = 0;
+function buildMascots(){
+  const W = window.innerWidth, H = window.innerHeight;
+  if (W === lastW) return;   // กันกระพริบตอนแถบเบราว์เซอร์มือถือขยับ
+  lastW = W;
+  layer.innerHTML = '';
+  const cell = Math.max(W < 600 ? 150 : 200, Math.sqrt(W * H / 22));
+  const cols = Math.ceil(W / cell), rows = Math.ceil(H / cell);
+  for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++){
+    const i = r * cols + c;
+    const el = document.createElement('div');
+    el.className = 'mascot';
+    const size = 70 + Math.random() * 50;
+    const left = (c + 0.5 + (Math.random() - .5) * .6) / cols * 100;
+    const top  = (r + 0.5 + (Math.random() - .5) * .6) / rows * 100;
+    el.style.cssText = `--s:${size}px;--d:${7+Math.random()*7}s;--delay:${-Math.random()*8}s;--x:${30+Math.random()*80}px;--y:${20+Math.random()*60}px;left:${left}%;top:${top}%;margin:calc(var(--s) * var(--k,1) * -.5) 0 0 calc(var(--s) * var(--k,1) * -.5);`;
+    if (CUSTOM_CHARACTER_IMAGES.length){
+      el.innerHTML = `<img alt="" src="${CUSTOM_CHARACTER_IMAGES[(i + r) % CUSTOM_CHARACTER_IMAGES.length]}">`;
+    } else {
+      el.innerHTML = `<svg style="--c:${palette[i % 4]}"><use href="#blob" xlink:href="#blob"/></svg>`;
+    }
+    layer.appendChild(el);
+  }
+}
+buildMascots();
+window.addEventListener('resize', buildMascots);
+
+const file = document.getElementById('file');
+document.getElementById('frame').addEventListener('click',()=>file.click());
+file.addEventListener('change',e=>{
+  const f = e.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = ()=>{ document.getElementById('photo').innerHTML = `<img alt="รูปเจ้าของวันเกิด" src="${r.result}">`; };
+  r.readAsDataURL(f);
+});
+// เครื่องเก่าที่ไม่รองรับ aspect-ratio
+const photoBox = document.getElementById('photo');
+function fixPhotoRatio(){
+  if (window.CSS && CSS.supports && !CSS.supports('aspect-ratio','1 / 1')) photoBox.style.height = photoBox.offsetWidth + 'px';
+}
+fixPhotoRatio(); window.addEventListener('resize', fixPhotoRatio);
+</script>
+</body>
+</html>
